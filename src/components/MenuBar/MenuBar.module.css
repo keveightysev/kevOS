@@ -1,0 +1,81 @@
+.menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  background: var(--menubar-gradient);
+  border-bottom: 1px solid var(--border-color);
+  user-select: none;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo {
+  font-family: 'Chicago', 'Charcoal', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--text-primary);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.menuItem {
+  font-family: 'Chicago', 'Charcoal', monospace;
+  font-size: 12px;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  padding: 0 8px;
+  cursor: pointer;
+  height: 20px;
+  line-height: 20px;
+}
+
+.menuItem:hover {
+  background: var(--chrome-active);
+  color: #fff;
+}
+
+.menuItem:focus-visible {
+  outline: 2px solid #533483;
+  outline-offset: -2px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.themeToggle {
+  font-size: 13px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid #533483;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.clock {
+  font-family: 'Chicago', 'Charcoal', monospace;
+  font-size: 11px;
+  color: var(--text-primary);
+  white-space: nowrap;
+}

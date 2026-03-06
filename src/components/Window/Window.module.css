@@ -1,0 +1,133 @@
+.dnd {
+  transition:
+    width 500ms ease,
+    height 500ms ease;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--window-bg);
+}
+
+/* ─── Shadow states ─── */
+.active {
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.4),
+    6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.inactive {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Title bar ─── */
+.titleBar {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: move;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.active .titleBar {
+  background: var(--chrome-active);
+}
+
+.inactive .titleBar {
+  background: var(--chrome-inactive);
+}
+
+/* ─── Traffic lights ─── */
+.trafficLights {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 1;
+}
+
+.light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.light:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Active colors */
+.active .close {
+  background: #ff5f57;
+}
+.active .minimize {
+  background: #febc2e;
+}
+.active .maximize {
+  background: #28c840;
+}
+
+/* Inactive grays */
+.inactive .close,
+.inactive .minimize,
+.inactive .maximize {
+  background: #888;
+}
+
+/* ─── Window title ─── */
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: "Chicago", "Charcoal", monospace;
+  color: #fff;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 52px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Content area ─── */
+.content {
+  flex: 1;
+  overflow: auto;
+  background: var(--window-bg);
+  color: var(--text-primary);
+  font-family: Georgia, serif;
+}
+
+/* ─── Status bar ─── */
+.statusBar {
+  height: 16px;
+  background: var(--statusbar-bg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  flex-shrink: 0;
+}
+
+.statusBar span {
+  font-size: 10px;
+  font-family: "Courier New", monospace;
+  color: var(--text-muted);
+}

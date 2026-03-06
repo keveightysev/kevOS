@@ -1,0 +1,63 @@
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 2px;
+  background: var(--menubar-gradient);
+  border-top: 1px solid var(--border-color);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.taskbar::-webkit-scrollbar {
+  height: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 18px;
+  border: 1px solid var(--border-color);
+  background: var(--menubar-gradient);
+  cursor: pointer;
+  font-family: 'Chicago', 'Charcoal', monospace;
+  font-size: 10px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 160px;
+}
+
+.btn:hover {
+  background: var(--chrome-active);
+  color: #fff;
+  border-color: var(--border-color);
+}
+
+.btn.active {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: var(--border-color);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #533483;
+  outline-offset: 1px;
+}
+
+.icon {
+  font-size: 11px;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
