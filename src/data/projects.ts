@@ -243,7 +243,7 @@ export const researchProjects: Project[] = [
     links: [
       {
         label: "Read the Full Paper",
-        url: "",
+        url: "https://drive.google.com/file/d/1djzuppkmlW3Of8E37JE-JxjJfpD057SR/view?usp=sharing",
       },
     ],
   },
@@ -273,7 +273,7 @@ export const researchProjects: Project[] = [
     links: [
       {
         label: "Read the Full Paper",
-        url: "",
+        url: "https://drive.google.com/file/d/19xNEAFExI2JIIFQQ9oSNfPvL-FV_313y/view?usp=sharing",
       },
     ],
   },
@@ -302,7 +302,7 @@ export const researchProjects: Project[] = [
     links: [
       {
         label: "Read the Full Paper",
-        url: "",
+        url: "https://drive.google.com/file/d/1KHoOVarqawjlw8OpXUSmrs-YvYfV7_X_/view?usp=sharing",
       },
     ],
   },
