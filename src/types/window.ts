@@ -1,11 +1,11 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 export interface WindowConfig {
   title: string;
   icon: string;
   content: ReactNode;
-  w: number;
-  h: number;
+  w: number | string;
+  h: number | string;
 }
 
 export interface WindowState extends WindowConfig {

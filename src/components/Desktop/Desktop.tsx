@@ -28,7 +28,7 @@ interface IconConfig {
   icon: string;
   label: string;
   w: number;
-  h: number;
+  h: number | string;
   makeContent: () => ReactNode;
 }
 
@@ -36,8 +36,8 @@ const DESKTOP_ICONS: IconConfig[] = [
   {
     icon: "👤",
     label: "About Kevin",
-    w: 500,
-    h: 440,
+    w: 550,
+    h: "80%",
     makeContent: () => <AboutWindow />,
   },
   {

@@ -1,9 +1,3 @@
-.dnd {
-  transition:
-    width 500ms ease,
-    height 500ms ease;
-}
-
 .window {
   display: flex;
   flex-direction: column;

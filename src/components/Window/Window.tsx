@@ -1,7 +1,7 @@
 import { Rnd } from "react-rnd";
 import type { WindowState } from "../../types/window";
 import styles from "./Window.module.css";
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 interface WindowProps {
   win: WindowState;
@@ -122,9 +122,7 @@ export function Window({
               tabIndex={0}
             />
           </div>
-          <span className={styles.title}>
-            {win.icon} {win.title}
-          </span>
+          <span className={styles.title}>{win.title}</span>
         </div>
 
         {/* Content */}
