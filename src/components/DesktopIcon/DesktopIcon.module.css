@@ -8,32 +8,33 @@
   border-radius: 4px;
   cursor: pointer;
   outline: none;
-  transition: background 0.1s;
+  transition: background-color 0.1s;
+  border: none;
+  background: transparent;
 }
 
 .icon:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
-.icon:focus-visible {
-  outline: 2px dashed rgba(255, 255, 255, 0.9);
-  outline-offset: 2px;
-  background: rgba(83, 52, 131, 0.35);
+.icon:focus {
+  outline: 1px dotted var(--icon-color);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.emoji {
-  font-size: 28px;
-  line-height: 1;
+.iconImage {
   pointer-events: none;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  color: var(--icon-color);
 }
-
 .label {
-  font-family: 'Chicago', 'Charcoal', monospace;
+  font-family: "Chicago", "Charcoal", monospace;
   font-size: 10px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.7);
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 0 6px rgba(0, 0, 0, 0.7);
   pointer-events: none;
   word-break: break-word;
   hyphens: auto;

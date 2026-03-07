@@ -1,16 +1,20 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   overflow: hidden;
 }
 
 body {
-  font-family: 'Chicago', 'Charcoal', monospace;
+  font-family: "Chicago", "Charcoal", monospace;
   font-size: 13px;
 }
 
@@ -20,16 +24,29 @@ body {
   --desktop-bg: #c8c8c8;
   --menubar-gradient: linear-gradient(180deg, #f0f0f0, #d8d8d8);
   --window-bg: #ffffff;
-  --chrome-active: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #533483 100%);
+  --chrome-active: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 30%,
+    #0f3460 60%,
+    #533483 100%
+  );
   --chrome-inactive: linear-gradient(135deg, #888 0%, #aaa 100%);
   --border-color: #000000;
   --text-primary: #111111;
   --text-muted: #666666;
   --tag-bg: #e0e0e0;
   --divider: #dddddd;
-  --accent-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #533483 100%);
+  --accent-gradient: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 30%,
+    #0f3460 60%,
+    #533483 100%
+  );
   --statusbar-bg: linear-gradient(180deg, #f0f0f0, #d8d8d8);
   --taskbar-btn-text: #111;
+  --icon-color: #3a3a3a;
 }
 
 /* ─── Dark theme ─── */
@@ -37,16 +54,29 @@ body {
   --desktop-bg: #1a1a1a;
   --menubar-gradient: linear-gradient(180deg, #2a2a2a, #1a1a1a);
   --window-bg: #1e1e1e;
-  --chrome-active: linear-gradient(135deg, #0d0d1a 0%, #1a0533 40%, #2d1b69 70%, #1a0533 100%);
+  --chrome-active: linear-gradient(
+    135deg,
+    #0d0d1a 0%,
+    #1a0533 40%,
+    #2d1b69 70%,
+    #1a0533 100%
+  );
   --chrome-inactive: linear-gradient(135deg, #2a2a2a, #3a3a3a);
   --border-color: #555555;
   --text-primary: #e0e0e0;
   --text-muted: #888888;
   --tag-bg: #333333;
   --divider: #333333;
-  --accent-gradient: linear-gradient(135deg, #0d0d1a 0%, #1a0533 40%, #2d1b69 70%, #1a0533 100%);
+  --accent-gradient: linear-gradient(
+    135deg,
+    #0d0d1a 0%,
+    #1a0533 40%,
+    #2d1b69 70%,
+    #1a0533 100%
+  );
   --statusbar-bg: linear-gradient(180deg, #2a2a2a, #1a1a1a);
   --taskbar-btn-text: #e0e0e0;
+  --icon-color: #c8c8c8;
 }
 
 /* ─── App shell layout ─── */

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export interface WindowConfig {
   title: string;
-  icon: string;
+  icon: ReactNode;
   content: ReactNode;
   w: number | string;
   h: number | string;

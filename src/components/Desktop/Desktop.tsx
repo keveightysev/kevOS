@@ -9,6 +9,12 @@ import { EngineeringWindow } from "../../windows/EngineeringWindow";
 import { ResearchWindow } from "../../windows/ResearchWindow";
 import { ContactWindow } from "../../windows/ContactWindow";
 import styles from "./Desktop.module.css";
+import { UserIcon } from "../../icons/UserIcon";
+import { DocumentIcon } from "../../icons/DocumentIcon";
+import { DocumentStackIcon } from "../../icons/DocumentStackIcon";
+import { CodeIcon } from "../../icons/CodeIcon";
+import { BookWithTextIcon } from "../../icons/BookWithTextIcon";
+import { PaperPlaneIcon } from "../../icons/PaperPlaneIcon";
 
 interface WindowManager {
   windows: WindowState[];
@@ -25,7 +31,7 @@ interface DesktopProps {
 }
 
 interface IconConfig {
-  icon: string;
+  icon: ReactNode;
   label: string;
   w: number;
   h: number | string;
@@ -34,42 +40,42 @@ interface IconConfig {
 
 const DESKTOP_ICONS: IconConfig[] = [
   {
-    icon: "👤",
+    icon: <UserIcon />,
     label: "About Kevin",
     w: 550,
     h: "80%",
     makeContent: () => <AboutWindow />,
   },
   {
-    icon: "📄",
+    icon: <DocumentIcon />,
     label: "Resume.pdf",
     w: 520,
     h: 500,
     makeContent: () => <ResumeWindow />,
   },
   {
-    icon: "🎨",
-    label: "Reprise",
+    icon: <DocumentStackIcon />,
+    label: "UX Case Studies",
     w: 560,
     h: 480,
     makeContent: () => <RepriseWindow />,
   },
   {
-    icon: "💼",
+    icon: <CodeIcon />,
     label: "Engineering Work",
     w: 520,
     h: 400,
     makeContent: () => <EngineeringWindow />,
   },
   {
-    icon: "📚",
-    label: "UX & Research",
+    icon: <BookWithTextIcon />,
+    label: "Research",
     w: 520,
     h: 400,
     makeContent: () => <ResearchWindow />,
   },
   {
-    icon: "✉️",
+    icon: <PaperPlaneIcon />,
     label: "Contact",
     w: 360,
     h: 240,

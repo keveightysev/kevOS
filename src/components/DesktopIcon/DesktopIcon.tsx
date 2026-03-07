@@ -1,42 +1,49 @@
-import { useRef } from 'react';
-import styles from './DesktopIcon.module.css';
+import { ReactNode, useRef } from "react";
+import styles from "./DesktopIcon.module.css";
 
 interface DesktopIconProps {
-  icon: string;
+  icon: ReactNode;
   label: string;
   onOpen: () => void;
 }
 
 export function DesktopIcon({ icon, label, onOpen }: DesktopIconProps) {
-  const lastClickTime = useRef(0);
+  const refIconButton = useRef<HTMLButtonElement>(null);
+  const refLastTimeClicked = useRef(0);
+
+  const handleOpen = () => {
+    onOpen();
+    refIconButton.current?.blur();
+  };
 
   const handleClick = () => {
     const now = Date.now();
-    if (now - lastClickTime.current < 400) {
-      onOpen();
+    if (now - refLastTimeClicked.current < 400) {
+      handleOpen();
     }
-    lastClickTime.current = now;
+    refLastTimeClicked.current = now;
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      onOpen();
+      handleOpen();
     }
   };
 
   return (
-    <div
+    <button
       className={styles.icon}
-      role="button"
+      type="button"
       tabIndex={0}
       aria-label={`Open ${label}`}
       onClick={handleClick}
-      onDoubleClick={onOpen}
+      onDoubleClick={handleOpen}
       onKeyDown={handleKeyDown}
+      ref={refIconButton}
     >
-      <span className={styles.emoji} aria-hidden="true">{icon}</span>
+      <span className={styles.iconImage}>{icon}</span>
       <span className={styles.label}>{label}</span>
-    </div>
+    </button>
   );
 }
