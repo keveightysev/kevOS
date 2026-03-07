@@ -7,6 +7,8 @@ interface DesktopIconProps {
   onOpen: () => void;
 }
 
+const isTouchDevice = () => window.matchMedia("(pointer: coarse)").matches;
+
 export function DesktopIcon({ icon, label, onOpen }: DesktopIconProps) {
   const refIconButton = useRef<HTMLButtonElement>(null);
   const refLastTimeClicked = useRef(0);
@@ -17,6 +19,11 @@ export function DesktopIcon({ icon, label, onOpen }: DesktopIconProps) {
   };
 
   const handleClick = () => {
+    if (isTouchDevice()) {
+      handleOpen();
+      return;
+    }
+
     const now = Date.now();
     if (now - refLastTimeClicked.current < 400) {
       handleOpen();
@@ -38,7 +45,7 @@ export function DesktopIcon({ icon, label, onOpen }: DesktopIconProps) {
       tabIndex={0}
       aria-label={`Open ${label}`}
       onClick={handleClick}
-      onDoubleClick={handleOpen}
+      onDoubleClick={!isTouchDevice() ? handleOpen : undefined}
       onKeyDown={handleKeyDown}
       ref={refIconButton}
     >
