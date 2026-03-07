@@ -1,5 +1,9 @@
 import type { ReactNode } from "react";
-import type { WindowConfig, WindowState } from "../../types/window";
+import type {
+  WindowConfig,
+  WindowDimension,
+  WindowState,
+} from "../../types/window";
 import { DesktopIcon } from "../DesktopIcon/DesktopIcon";
 import { Window } from "../Window/Window";
 import { AboutWindow } from "../../windows/AboutWindow";
@@ -33,8 +37,8 @@ interface DesktopProps {
 interface IconConfig {
   icon: ReactNode;
   label: string;
-  w: number;
-  h: number | string;
+  w: WindowDimension;
+  h: WindowDimension;
   makeContent: () => ReactNode;
 }
 
@@ -49,8 +53,8 @@ const DESKTOP_ICONS: IconConfig[] = [
   {
     icon: <DocumentIcon />,
     label: "Resume.pdf",
-    w: 520,
-    h: 500,
+    w: "60%",
+    h: 600,
     makeContent: () => <ResumeWindow />,
   },
   {

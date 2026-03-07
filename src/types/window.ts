@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
 
+export type WindowDimension = number | `${number}%`;
+
 export interface WindowConfig {
   title: string;
   icon: ReactNode;
   content: ReactNode;
-  w: number | string;
-  h: number | string;
+  w: WindowDimension;
+  h: WindowDimension;
 }
 
 export interface WindowState extends WindowConfig {

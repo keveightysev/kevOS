@@ -234,3 +234,9 @@
 .contactLink:hover {
   text-decoration: underline;
 }
+
+.resumeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
