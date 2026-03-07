@@ -76,6 +76,234 @@ export const uxProjects: Project[] = [
   },
 ];
 
-export const engineeringProjects: Project[] = [];
+export const engineeringProjects: Project[] = [
+  {
+    id: "pie-onboarding",
+    type: "engineering",
+    title: "Pie Onboarding Rebuild",
+    subtitle: "Senior Software Engineer · Pie · 2026",
+    year: 2026,
+    tags: ["React Native", "TypeScript", "Mobile", "Product", "Mixpanel", "UX"],
+    thumbnail: {
+      src: "/images/pie-onboarding/cover.png",
+      alt: "Pie mobile app onboarding flow",
+    },
+    summary:
+      "Rebuilt the Pie mobile onboarding flow from 4 steps to 13 to drive richer profile completion and improve user-to-user interaction quality. Despite the significant increase in steps, Mixpanel event tracking showed no meaningful drop-off — users were completing the full flow.",
+    sections: [
+      {
+        title: "Problem",
+        content:
+          "New users were arriving on the platform with sparse profiles — no photo, minimal interests, little context for other users to connect with them. This created a cold-start problem: even users who wanted to engage had nothing to go on. The original 4-step onboarding wasn't capturing enough signal to make the product work.",
+      },
+      {
+        title: "Approach",
+        content:
+          "Expanded onboarding from 4 steps to 13, progressively collecting profile data — photos, interests, social context, and preferences — in a way that felt conversational rather than form-like. Each step was designed to feel low-friction while collectively building a profile dense enough to drive real recommendations and interactions.",
+      },
+      {
+        title: "Outcome",
+        content:
+          "No significant drop-off at any step according to Mixpanel funnel analysis. Users were completing the full 13-step flow at rates comparable to the original 4-step flow, with substantially richer profiles as the result. The rebuild directly improved the quality of user-to-user interactions on the platform.",
+      },
+    ],
+  },
+  {
+    id: "us-state-converter",
+    type: "engineering",
+    title: "us-state-converter",
+    subtitle: "Open Source · npm package · 2020–present",
+    year: 2023,
+    tags: ["JavaScript", "npm", "Open Source", "Node.js"],
+    thumbnail: {
+      src: "/images/us-state-converter/cover.png",
+      alt: "us-state-converter npm package",
+    },
+    summary:
+      "A utility package for converting US state names to abbreviations and back, with support for USPS, ISO, and USCG formats plus demonyms. Built to scratch a recurring itch across multiple projects. Currently averaging over 21,000 weekly downloads.",
+    sections: [
+      {
+        title: "Why I Built It",
+        content:
+          "I kept writing the same state abbreviation conversion utility across different projects. Rather than copy-pasting, I packaged it properly, published it to npm, and used it as an opportunity to learn the full open source workflow: versioning, documentation, package distribution, and maintenance.",
+      },
+      {
+        title: "What It Does",
+        content:
+          "Converts between full state names and USPS abbreviations in both directions. Returns full state objects including ISO and USCG codes and demonyms. Supports filtering to just the 50 states (excluding territories and DC). Designed to be dead simple: one import, intuitive method names, no dependencies.",
+      },
+      {
+        title: "Traction",
+        content:
+          "21,000+ weekly downloads as of 2026. The package has been running for five years with minimal maintenance, which is the point — it solves a small problem well and stays out of the way.",
+      },
+    ],
+    links: [
+      { label: "npm", url: "https://www.npmjs.com/package/us-state-converter" },
+      {
+        label: "GitHub",
+        url: "https://github.com/keveightysev/us-state-converter",
+      },
+    ],
+  },
+  {
+    id: "internet-graffiti-wall",
+    type: "engineering",
+    title: "Internet Graffiti Wall",
+    subtitle: "Personal Project · 2019–present",
+    year: 2019,
+    tags: ["React", "Canvas API", "JavaScript", "Personal"],
+    thumbnail: {
+      src: "/images/graffiti-wall/cover.png",
+      alt: "Internet Graffiti Wall — canvas spray paint app",
+    },
+    summary:
+      "A browser-based spray paint simulator built on the Canvas API. My first fully self-directed project — no tutorials, no instruction. You open it, you paint a wall.",
+    sections: [
+      {
+        title: "Why It Exists",
+        content:
+          "I wanted to build something purely for fun and teach myself the Canvas API without following a tutorial. The graffiti wall concept was simple enough to be achievable but open-ended enough to stay interesting. It's still one of my favorite things I've built.",
+      },
+      {
+        title: "How It Works",
+        content:
+          "Uses the Canvas API to simulate spray paint: a randomized particle spread that responds to mouse speed and pressure. The faster you move, the more diffuse the spray. Hold still and the paint builds up. No libraries, no frameworks beyond React for the shell.",
+      },
+      {
+        title: "Status",
+        content:
+          "Actively maintained and being expanded. More features in progress.",
+      },
+    ],
+    links: [
+      { label: "Live Site", url: "https://graffiti-wall.netlify.app/" },
+      { label: "GitHub", url: "https://github.com/keveightysev/graffiti" },
+    ],
+  },
+  {
+    id: "recaller",
+    type: "engineering",
+    title: "ReCaller",
+    subtitle: "Lambda School Labs · 2019",
+    year: 2019,
+    tags: ["React", "Node.js", "Firebase", "Twilio", "Stripe", "Deepgram"],
+    thumbnail: {
+      src: "/images/recaller/cover.png",
+      alt: "ReCaller — scheduled phone call app",
+    },
+    summary:
+      "A scheduled phone call app that recorded calls, transcribed them via Deepgram, and stored recordings for later access. Built in 6 weeks with a team of four during Lambda School Labs, integrating Twilio for calls, Stripe for payments, and Firebase for storage.",
+    sections: [
+      {
+        title: "The Build",
+        content:
+          "Six weeks, four developers, three external APIs, and a product spec we had to interpret ourselves. Twilio handled call scheduling and recording, Deepgram transcribed the audio, Stripe handled subscription payments, and Firebase stored recordings and transcriptions. The hardest part was orchestrating the async pipeline between call completion, transcription, and delivery.",
+      },
+      {
+        title: "My Role",
+        content:
+          "Frontend architecture and API integration on the React side. Also handled the Stripe payment flow and worked closely with the backend developer on the Twilio webhook pipeline.",
+      },
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/labs12-mom-caller/Front-End",
+      },
+    ],
+  },
+];
 
-export const researchProjects: Project[] = [];
+export const researchProjects: Project[] = [
+  {
+    id: "delegating-authenticity",
+    type: "research",
+    title: "Delegating Authenticity",
+    subtitle:
+      "Critical Reading Memo · HCI 450 · DePaul University · Winter 2026",
+    year: 2026,
+    tags: [
+      "Goffman",
+      "Swidler",
+      "Geertz",
+      "Impression Management",
+      "Cultural Toolkit",
+      "Thick Description",
+      "AI Ethics",
+      "SMS AI",
+      "Technology-as-Culture",
+    ],
+    thumbnail: {
+      src: "/images/delegating-authenticity/cover.png",
+      alt: "Delegating Authenticity — SMS-based AI analysis",
+    },
+    summary:
+      "An analysis of Poke's promotional materials through Goffman, Swidler, and Geertz, arguing that SMS-based AI assistants embed two assumptions — that emotional labor is outsourceable and social coordination is a technical problem — creating a feedback loop that gradually atrophies users' cultural competencies.",
+    links: [
+      {
+        label: "Read the Full Paper",
+        url: "",
+      },
+    ],
+  },
+  {
+    id: "quest-log-lineage",
+    type: "research",
+    title: "From To-Do Lists to Dragons",
+    subtitle: "Lineage Analysis · HCI 450 · DePaul University · Winter 2026",
+    year: 2026,
+    tags: [
+      "Distributed Cognition",
+      "Engelbart",
+      "Hollan & Hutchins",
+      "Zhang & Norman",
+      "Costanza-Chock",
+      "Game Design",
+      "Productivity UI",
+      "Design Justice",
+      "Cognitive Artifacts",
+    ],
+    thumbnail: {
+      src: "/images/quest-log-lineage/cover.png",
+      alt: "Quest log lineage analysis — Dragon Age Inquisition quest log",
+    },
+    summary:
+      "A lineage analysis tracing the quest log in role-playing games through two converging traditions: gameplay conventions originating in tabletop RPGs, and representational design patterns rooted in Engelbart's augmentation framework and productivity software. Argues that quest logs colonize play with workplace logic, privileging certain modes of engagement while marginalizing others.",
+    links: [
+      {
+        label: "Read the Full Paper",
+        url: "",
+      },
+    ],
+  },
+  {
+    id: "pie-checkin-interpretive",
+    type: "research",
+    title: "Frontstage Access, Backstage Labor",
+    subtitle:
+      "Interpretive Analysis · HCI 450 · DePaul University · Winter 2026",
+    year: 2026,
+    tags: [
+      "Goffman",
+      "Contextual Design",
+      "Beyer & Holtzblatt",
+      "Impression Management",
+      "Frontstage/Backstage",
+      "Pie",
+      "Mobile UX",
+    ],
+    thumbnail: {
+      src: "/images/pie-checkin/cover.png",
+      alt: "QR code check-in interaction at a Pie event",
+    },
+    summary:
+      "An interpretive analysis of QR code check-in at a Pie event, using Goffman's presentation of self to argue that a successful scan does more than grant access — it publicly confirms legitimacy and belonging. Examines the invisible backstage labor users perform to preserve frontstage order when the system breaks down.",
+    links: [
+      {
+        label: "Read the Full Paper",
+        url: "",
+      },
+    ],
+  },
+];

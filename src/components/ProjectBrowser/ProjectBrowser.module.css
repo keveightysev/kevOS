@@ -371,7 +371,6 @@
   padding: 5px 12px;
   cursor: pointer;
   transition: background 0.1s;
-  border: 5px solid red;
 }
 
 .openButton:hover {
