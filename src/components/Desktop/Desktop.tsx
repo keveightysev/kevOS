@@ -67,22 +67,22 @@ const DESKTOP_ICONS: IconConfig[] = [
   {
     icon: <CodeIcon />,
     label: "Engineering Work",
-    w: 520,
-    h: 400,
+    w: 560,
+    h: 480,
     makeContent: () => <EngineeringWindow />,
   },
   {
     icon: <BookWithTextIcon />,
     label: "Research",
-    w: 520,
-    h: 400,
+    w: 560,
+    h: 480,
     makeContent: () => <ResearchWindow />,
   },
   {
     icon: <PaperPlaneIcon />,
     label: "Contact",
-    w: 360,
-    h: 240,
+    w: 560,
+    h: 540,
     makeContent: () => <ContactWindow />,
   },
 ];
