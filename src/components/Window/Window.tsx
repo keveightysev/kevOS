@@ -35,6 +35,25 @@ export function Window({
   });
   const [expanded, setExpanded] = useState(false);
 
+  const handleMaximize = () => {
+    if (expanded) {
+      onMove(
+        refWindowPosition.current?.x ?? 0,
+        refWindowPosition.current?.y ?? 0,
+      );
+      setWindowSize(refWindowSize.current!);
+      refWindowPosition.current = null;
+      refWindowSize.current = null;
+      setExpanded(false);
+    } else {
+      refWindowPosition.current = { x: win.x, y: win.y };
+      refWindowSize.current = windowSize;
+      onMove(0, 0);
+      setWindowSize({ width: "100%", height: "100%" });
+      setExpanded(true);
+    }
+  };
+
   if (win.minimized) return null;
 
   return (
@@ -82,8 +101,11 @@ export function Window({
                 e.stopPropagation();
                 onClose();
               }}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
               aria-label={`Close ${win.title}`}
-              tabIndex={0}
             />
             <button
               className={`${styles.light} ${styles.minimize} ${styles.trafficLight}`}
@@ -91,35 +113,23 @@ export function Window({
                 e.stopPropagation();
                 onMinimize();
               }}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                onMinimize();
+              }}
               aria-label={`Minimize ${win.title}`}
-              tabIndex={0}
             />
             <button
               className={`${styles.light} ${styles.maximize} ${styles.trafficLight}`}
-              aria-label={`Maximize ${win.title}`}
               onClick={(e) => {
                 e.stopPropagation();
-                if (expanded) {
-                  onMove(
-                    refWindowPosition.current?.x ?? 0,
-                    refWindowPosition.current?.y ?? 0,
-                  );
-                  setWindowSize(refWindowSize.current!);
-                  refWindowPosition.current = null;
-                  refWindowSize.current = null;
-                  setExpanded(false);
-                } else {
-                  refWindowPosition.current = {
-                    x: win.x,
-                    y: win.y,
-                  };
-                  refWindowSize.current = windowSize;
-                  onMove(0, 0);
-                  setWindowSize({ width: "100%", height: "100%" });
-                  setExpanded(true);
-                }
+                handleMaximize();
               }}
-              tabIndex={0}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                handleMaximize();
+              }}
+              aria-label={`Maximize ${win.title}`}
             />
           </div>
           <span className={styles.title}>{win.title}</span>
