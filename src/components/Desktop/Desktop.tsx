@@ -8,7 +8,6 @@ import { DesktopIcon } from "../DesktopIcon/DesktopIcon";
 import { Window } from "../Window/Window";
 import { AboutWindow } from "../../windows/AboutWindow";
 import { ResumeWindow } from "../../windows/ResumeWindow";
-import { RepriseWindow } from "../../windows/RepriseWindow";
 import { EngineeringWindow } from "../../windows/EngineeringWindow";
 import { ResearchWindow } from "../../windows/ResearchWindow";
 import { ContactWindow } from "../../windows/ContactWindow";
@@ -19,6 +18,7 @@ import { DocumentStackIcon } from "../../icons/DocumentStackIcon";
 import { CodeIcon } from "../../icons/CodeIcon";
 import { BookWithTextIcon } from "../../icons/BookWithTextIcon";
 import { PaperPlaneIcon } from "../../icons/PaperPlaneIcon";
+import { UXCaseStudiesWindow } from "../../windows/UXCaseStudiesWindow";
 
 interface WindowManager {
   windows: WindowState[];
@@ -62,7 +62,7 @@ const DESKTOP_ICONS: IconConfig[] = [
     label: "UX Case Studies",
     w: 560,
     h: 480,
-    makeContent: () => <RepriseWindow />,
+    makeContent: () => <UXCaseStudiesWindow />,
   },
   {
     icon: <CodeIcon />,

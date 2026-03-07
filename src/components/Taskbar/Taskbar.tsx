@@ -1,5 +1,5 @@
-import type { WindowState } from '../../types/window';
-import styles from './Taskbar.module.css';
+import type { WindowState } from "../../types/window";
+import styles from "./Taskbar.module.css";
 
 interface TaskbarProps {
   windows: WindowState[];
@@ -8,7 +8,12 @@ interface TaskbarProps {
   onToggleMinimize: (id: number) => void;
 }
 
-export function Taskbar({ windows, activeId, onFocus, onToggleMinimize }: TaskbarProps) {
+export function Taskbar({
+  windows,
+  activeId,
+  onFocus,
+  onToggleMinimize,
+}: TaskbarProps) {
   const handleClick = (win: WindowState) => {
     if (win.minimized) {
       onToggleMinimize(win.id);
@@ -22,15 +27,17 @@ export function Taskbar({ windows, activeId, onFocus, onToggleMinimize }: Taskba
 
   return (
     <div className={styles.taskbar} role="toolbar" aria-label="Open windows">
-      {windows.map(win => (
+      {windows.map((win) => (
         <button
           key={win.id}
-          className={`${styles.btn} ${win.id === activeId && !win.minimized ? styles.active : ''}`}
+          className={`${styles.btn} ${win.id === activeId && !win.minimized ? styles.active : ""}`}
           onClick={() => handleClick(win)}
           aria-label={win.title}
           aria-pressed={win.id === activeId && !win.minimized}
         >
-          <span className={styles.icon} aria-hidden="true">{win.icon}</span>
+          <span className={styles.icon} aria-hidden="true">
+            {win.icon}
+          </span>
           <span className={styles.label}>{win.title}</span>
         </button>
       ))}

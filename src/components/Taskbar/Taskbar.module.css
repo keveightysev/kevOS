@@ -28,7 +28,7 @@
   border: 1px solid var(--border-color);
   background: var(--menubar-gradient);
   cursor: pointer;
-  font-family: 'Chicago', 'Charcoal', monospace;
+  font-family: "Chicago", "Charcoal", monospace;
   font-size: 10px;
   color: var(--text-primary);
   white-space: nowrap;
@@ -60,4 +60,17 @@
 .label {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 540px) {
+  .taskbar {
+    height: 44px;
+  }
+
+  .btn {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 12px;
+    padding: 0 14px;
+  }
 }

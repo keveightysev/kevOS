@@ -1,0 +1,419 @@
+/* ─── Layout ─────────────────────────────────────────────── */
+
+.browser {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Chicago", "Charcoal", monospace;
+}
+
+/* ─── Left panel ─────────────────────────────────────────── */
+
+.listPanel {
+  width: 220px;
+  min-width: 180px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-window-bg);
+}
+
+.listHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-menubar-bg);
+}
+
+.listHeaderText {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+.listCount {
+  font-size: 9px;
+  color: var(--color-muted);
+}
+
+.list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.listEmpty {
+  font-size: 11px;
+  color: var(--color-muted);
+  text-align: center;
+  padding: 24px 12px;
+}
+
+/* ─── Card ───────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.1s;
+}
+
+.card:hover {
+  background: var(--color-tag-bg);
+}
+
+.card:focus-visible {
+  outline: 2px dotted rgba(83, 52, 131, 0.7);
+  outline-offset: -2px;
+  background: var(--color-tag-bg);
+}
+
+.cardSelected {
+  background: var(--color-window-chrome-active);
+  border-color: var(--color-border);
+}
+
+.cardSelected:hover,
+.cardSelected:focus {
+  filter: brightness(1.2);
+  outline: 2px dotted rgba(255, 255, 255, 0.7);
+  outline-offset: -3px;
+}
+
+.cardSelected .cardTitle,
+.cardSelected .cardSubtitle {
+  color: #fff;
+}
+
+.cardSelected {
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 30%,
+    #0f3460 60%,
+    #533483 100%
+  );
+  border-color: #000;
+}
+
+.cardSelected:hover {
+  background: linear-gradient(
+    135deg,
+    #2a2a4e 0%,
+    #243060 30%,
+    #1a4a80 60%,
+    #6a44a3 100%
+  );
+}
+
+.cardSelected:focus-visible {
+  outline: 2px dotted rgba(255, 255, 255, 0.7);
+  outline-offset: -3px;
+  background: linear-gradient(
+    135deg,
+    #2a2a4e 0%,
+    #243060 30%,
+    #1a4a80 60%,
+    #6a44a3 100%
+  );
+}
+
+.cardSelected .cardTitle,
+.cardSelected .cardSubtitle {
+  color: #fff;
+}
+
+.cardThumb {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-tag-bg);
+  overflow: hidden;
+}
+
+.cardThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardThumbFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardThumbYear {
+  font-size: 8px;
+  font-family: "Courier New", monospace;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardSubtitle {
+  font-size: 9px;
+  color: var(--color-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Right panel ────────────────────────────────────────── */
+
+.detailPanel {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--color-window-bg);
+}
+
+/* ─── Empty state ────────────────────────────────────────── */
+
+.emptyPanel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-muted);
+}
+
+.emptyIcon {
+  font-size: 28px;
+  opacity: 0.3;
+}
+
+.emptyText {
+  font-size: 11px;
+  font-family: "Chicago", "Charcoal", monospace;
+}
+
+/* ─── Side panel ─────────────────────────────────────────── */
+
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidePanelHero {
+  width: 100%;
+  height: 160px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-tag-bg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sidePanelHeroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: top;
+}
+
+.sidePanelContent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.sidePanelTitle {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Chicago", "Charcoal", monospace;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sidePanelSubtitle {
+  font-size: 10px;
+  font-family: "Courier New", monospace;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.sidePanelTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  font-size: 9px;
+  font-family: "Chicago", "Charcoal", monospace;
+  background: var(--color-tag-bg);
+  border: 1px solid var(--color-border);
+  padding: 2px 6px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sidePanelSummary {
+  font-size: 12px;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+/* ─── Sections ───────────────────────────────────────────── */
+
+.sidePanelSections {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sectionTitle {
+  font-size: 9px;
+  font-family: "Chicago", "Charcoal", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.sectionContent {
+  font-size: 12px;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ─── Actions ────────────────────────────────────────────── */
+
+.sidePanelActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.actionButton {
+  font-size: 10px;
+  font-family: "Chicago", "Charcoal", monospace;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-window-chrome-active);
+  border: 1px solid var(--color-border);
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.actionButton:hover {
+  filter: brightness(1.2);
+}
+
+.openButton {
+  font-size: 10px;
+  font-family: "Chicago", "Charcoal", monospace;
+  font-weight: bold;
+  color: var(--color-text);
+  background: var(--color-tag-bg);
+  border: 1px solid var(--color-border);
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.1s;
+  border: 5px solid red;
+}
+
+.openButton:hover {
+  background: var(--color-divider);
+}
+
+@media (max-width: 540px) {
+  .browser {
+    flex-direction: column;
+  }
+
+  .listPanel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* Hide list panel when a project is selected on mobile */
+  .listPanelHidden {
+    display: none;
+  }
+
+  /* Hide detail panel when nothing is selected on mobile */
+  .detailPanelHidden {
+    display: none;
+  }
+
+  .sidePanelThumb {
+    height: 200px;
+  }
+}
+
+.backButton {
+  font-size: 10px;
+  font-family: "Chicago", "Charcoal", monospace;
+  font-weight: bold;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text);
+}

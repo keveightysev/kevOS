@@ -77,7 +77,7 @@ export function Window({
         <div className={styles.titleBar}>
           <div className={styles.trafficLights}>
             <button
-              className={`${styles.light} ${styles.close}`}
+              className={`${styles.light} ${styles.close} ${styles.trafficLight}`}
               onClick={(e) => {
                 e.stopPropagation();
                 onClose();
@@ -86,7 +86,7 @@ export function Window({
               tabIndex={0}
             />
             <button
-              className={`${styles.light} ${styles.minimize}`}
+              className={`${styles.light} ${styles.minimize} ${styles.trafficLight}`}
               onClick={(e) => {
                 e.stopPropagation();
                 onMinimize();
@@ -95,7 +95,7 @@ export function Window({
               tabIndex={0}
             />
             <button
-              className={`${styles.light} ${styles.maximize}`}
+              className={`${styles.light} ${styles.maximize} ${styles.trafficLight}`}
               aria-label={`Maximize ${win.title}`}
               onClick={(e) => {
                 e.stopPropagation();

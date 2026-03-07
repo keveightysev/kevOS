@@ -47,6 +47,23 @@ body {
   --statusbar-bg: linear-gradient(180deg, #f0f0f0, #d8d8d8);
   --taskbar-btn-text: #111;
   --icon-color: #3a3a3a;
+  --color-text: #111;
+  --color-muted: #666;
+  --color-border: #000;
+  --color-divider: #ddd;
+  --color-window-bg: #ffffff;
+  --color-tag-bg: #e0e0e0;
+  --color-menubar-bg: linear-gradient(180deg, #f0f0f0 0%, #d8d8d8 100%);
+  --color-window-chrome-active: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 30%,
+    #0f3460 60%,
+    #533483 100%
+  );
+  --color-window-chrome-inactive: linear-gradient(135deg, #888 0%, #aaa 100%);
+  --icon-color: #3a3a3a;
+  --icon-label-color: #ffffff;
 }
 
 /* ─── Dark theme ─── */
@@ -77,6 +94,27 @@ body {
   --statusbar-bg: linear-gradient(180deg, #2a2a2a, #1a1a1a);
   --taskbar-btn-text: #e0e0e0;
   --icon-color: #c8c8c8;
+  --color-text: #e0e0e0;
+  --color-muted: #888;
+  --color-border: #444;
+  --color-divider: #333;
+  --color-window-bg: #1e1e1e;
+  --color-tag-bg: #2a2a2a;
+  --color-menubar-bg: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  --color-window-chrome-active: linear-gradient(
+    135deg,
+    #0d0d1a 0%,
+    #1a0533 40%,
+    #2d1b69 70%,
+    #1a0533 100%
+  );
+  --color-window-chrome-inactive: linear-gradient(
+    135deg,
+    #2a2a2a 0%,
+    #3a3a3a 100%
+  );
+  --icon-color: #c8c8c8;
+  --icon-label-color: #ffffff;
 }
 
 /* ─── App shell layout ─── */

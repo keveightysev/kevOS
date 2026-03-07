@@ -8,3 +8,5 @@ export function resolveDimension(
   const percent = parseFloat(value) / 100;
   return Math.round(viewport * percent);
 }
+
+export const isMobile = () => window.innerWidth <= 540;
