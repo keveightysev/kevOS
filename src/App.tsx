@@ -1,20 +1,26 @@
-import { useState } from 'react';
-import { BootScreen } from './components/BootScreen/BootScreen';
-import { Desktop } from './components/Desktop/Desktop';
-import { MenuBar } from './components/MenuBar/MenuBar';
-import { Taskbar } from './components/Taskbar/Taskbar';
-import { useWindowManager } from './hooks/useWindowManager';
+import { useState } from "react";
+import { BootScreen } from "./components/BootScreen/BootScreen";
+import { Desktop } from "./components/Desktop/Desktop";
+import { MenuBar } from "./components/MenuBar/MenuBar";
+import { Taskbar } from "./components/Taskbar/Taskbar";
+import { useWindowManager } from "./hooks/useWindowManager";
 
 export default function App() {
-  const [booted, setBooted] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const hasBooted = localStorage.getItem("kevos-booted") === "true";
+  const [booted, setBooted] = useState(hasBooted);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const wm = useWindowManager();
 
+  const handleBootComplete = () => {
+    localStorage.setItem("kevos-booted", "true");
+    setBooted(true);
+  };
+
   if (!booted) {
-    return <BootScreen onComplete={() => setBooted(true)} />;
+    return <BootScreen onComplete={handleBootComplete} />;
   }
 
-  const toggleTheme = () => setTheme(t => (t === 'light' ? 'dark' : 'light'));
+  const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
 
   return (
     <div className="app" data-theme={theme}>

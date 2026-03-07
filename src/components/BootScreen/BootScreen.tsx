@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import styles from './BootScreen.module.css';
+import { useState, useEffect, useRef } from "react";
+import styles from "./BootScreen.module.css";
 
 interface BootLine {
   text: string;
@@ -7,15 +7,17 @@ interface BootLine {
 }
 
 const BOOT_LINES: BootLine[] = [
-  { text: 'kevOS v1.0 — Personal Computing Environment', delay: 0 },
-  { text: 'Copyright © 2026 Kevin Smith. All rights reserved.', delay: 300 },
-  { text: 'Checking memory... 640K ought to be enough for anybody.', delay: 800 },
-  { text: 'Loading HCI frameworks... OK', delay: 1400 },
-  { text: 'Mounting creative work... OK', delay: 1900 },
-  { text: 'Initializing React stack... OK', delay: 2300 },
-  { text: 'Calibrating taste levels... OK', delay: 2700 },
-  { text: 'Checking for updates... HCI thesis 38% complete', delay: 3100 },
-  { text: 'Starting kevOS Desktop Environment...', delay: 3700 },
+  { text: "kevOS v1.0 — Personal Computing Environment", delay: 0 },
+  { text: "Copyright © 2026 Kevin Smith. All rights reserved.", delay: 300 },
+  {
+    text: "Checking memory... 640K ought to be enough for anybody.",
+    delay: 800,
+  },
+  { text: "Initializing React stack... OK", delay: 2300 },
+  { text: "Loading HCI frameworks... OK", delay: 1400 },
+  { text: "Mounting creative work... OK", delay: 1900 },
+  { text: "Calibrating taste levels... OK", delay: 2700 },
+  { text: "Starting kevOS Desktop Environment...", delay: 3700 },
 ];
 
 interface BootScreenProps {
@@ -34,7 +36,7 @@ export function BootScreen({ onComplete }: BootScreenProps) {
 
     BOOT_LINES.forEach((_, i) => {
       timers.push(
-        setTimeout(() => setVisibleCount(c => c + 1), BOOT_LINES[i].delay)
+        setTimeout(() => setVisibleCount((c) => c + 1), BOOT_LINES[i].delay),
       );
     });
 
@@ -71,7 +73,7 @@ export function BootScreen({ onComplete }: BootScreenProps) {
       <div className={styles.terminal}>
         {BOOT_LINES.slice(0, visibleCount).map((line, i) => (
           <div key={i} className={styles.line}>
-            <span className={styles.prompt}>{'>'}</span>
+            <span className={styles.prompt}>{">"}</span>
             {line.text}
           </div>
         ))}
