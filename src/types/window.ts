@@ -15,4 +15,5 @@ export interface WindowState extends WindowConfig {
   x: number;
   y: number;
   minimized: boolean;
+  zIndex: number;
 }

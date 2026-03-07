@@ -82,7 +82,7 @@ const DESKTOP_ICONS: IconConfig[] = [
     icon: <PaperPlaneIcon />,
     label: "Contact",
     w: 560,
-    h: 540,
+    h: 535,
     makeContent: () => <ContactWindow />,
   },
 ];

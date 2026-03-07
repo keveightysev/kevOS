@@ -9,6 +9,7 @@ const BASE_Y = 40;
 const STACK_OFFSET = 24;
 const MENU_BAR_HEIGHT = 20;
 const TASK_BAR_HEIGHT = 24;
+let nextZIndex = 1;
 
 export function useWindowManager() {
   const [windows, setWindows] = useState<WindowState[]>([]);
@@ -51,6 +52,7 @@ export function useWindowManager() {
           w,
           h,
           minimized: false,
+          zIndex: nextZIndex++,
         },
       ];
     });
@@ -65,11 +67,9 @@ export function useWindowManager() {
   }, []);
 
   const focusWindow = useCallback((id: number) => {
-    setWindows((prev) => {
-      const win = prev.find((w) => w.id === id);
-      if (!win) return prev;
-      return [...prev.filter((w) => w.id !== id), win];
-    });
+    setWindows((prev) =>
+      prev.map((w) => (w.id === id ? { ...w, zIndex: nextZIndex++ } : w)),
+    );
     setActiveId(id);
   }, []);
 

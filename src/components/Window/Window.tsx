@@ -72,7 +72,7 @@ export function Window({
         });
         onMove(pos.x, pos.y);
       }}
-      style={{ zIndex }}
+      style={{ zIndex: win.zIndex }}
       className={styles.dnd}
       enableResizing={{
         top: true,
