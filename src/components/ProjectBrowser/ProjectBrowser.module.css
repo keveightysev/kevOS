@@ -71,7 +71,6 @@
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  transition: background 0.1s;
 }
 
 .card:hover {
@@ -79,7 +78,7 @@
 }
 
 .card:focus-visible {
-  outline: 2px dotted rgba(83, 52, 131, 0.7);
+  outline: 2px dashed rgba(13, 148, 136, 0.4);
   outline-offset: -2px;
   background: var(--color-tag-bg);
 }
@@ -92,7 +91,7 @@
 .cardSelected:hover,
 .cardSelected:focus {
   filter: brightness(1.2);
-  outline: 2px dotted rgba(255, 255, 255, 0.7);
+  outline: 2px dashed rgba(255, 255, 255, 0.4);
   outline-offset: -3px;
 }
 
@@ -102,35 +101,31 @@
 }
 
 .cardSelected {
-  background: linear-gradient(
-    135deg,
-    #1a1a2e 0%,
-    #16213e 30%,
-    #0f3460 60%,
-    #533483 100%
-  );
+  background: var(--accent-gradient);
   border-color: #000;
 }
 
 .cardSelected:hover {
   background: linear-gradient(
     135deg,
-    #2a2a4e 0%,
-    #243060 30%,
-    #1a4a80 60%,
-    #6a44a3 100%
+    #0d9488 0%,
+    #0f7255 25%,
+    #166534 55%,
+    #14532d 80%,
+    #0f766e 100%
   );
 }
 
 .cardSelected:focus-visible {
-  outline: 2px dotted rgba(255, 255, 255, 0.7);
+  outline: 2px dashed rgba(255, 255, 255, 0.4);
   outline-offset: -3px;
   background: linear-gradient(
     135deg,
-    #2a2a4e 0%,
-    #243060 30%,
-    #1a4a80 60%,
-    #6a44a3 100%
+    #0d9488 0%,
+    #0f7255 25%,
+    #166534 55%,
+    #14532d 80%,
+    #0f766e 100%
   );
 }
 
@@ -401,7 +396,6 @@
   border: 1px solid var(--color-border);
   padding: 5px 12px;
   cursor: pointer;
-  transition: background 0.1s;
 }
 
 .openButton:hover {
