@@ -2,6 +2,10 @@ import { Rnd } from "react-rnd";
 import type { WindowState } from "../../types/window";
 import styles from "./Window.module.css";
 import { useRef, useState } from "react";
+import { CloseIcon } from "../../icons/CloseIcon";
+import { MinusIcon } from "../../icons/MinusIcon";
+import { ScaleContractIcon } from "../../icons/ScaleContractIcon";
+import { ScaleExtendIcon } from "../../icons/ScaleExtendIcon";
 
 interface WindowProps {
   win: WindowState;
@@ -106,7 +110,9 @@ export function Window({
                 onClose();
               }}
               aria-label={`Close ${win.title}`}
-            />
+            >
+              <CloseIcon size={12} />
+            </button>
             <button
               className={`${styles.light} ${styles.minimize} ${styles.trafficLight}`}
               onClick={(e) => {
@@ -118,7 +124,9 @@ export function Window({
                 onMinimize();
               }}
               aria-label={`Minimize ${win.title}`}
-            />
+            >
+              <MinusIcon size={12} />
+            </button>
             <button
               className={`${styles.light} ${styles.maximize} ${styles.trafficLight}`}
               onClick={(e) => {
@@ -129,8 +137,14 @@ export function Window({
                 e.stopPropagation();
                 handleMaximize();
               }}
-              aria-label={`Maximize ${win.title}`}
-            />
+              aria-label={`${expanded ? "Contract" : "Maximize"} ${win.title}`}
+            >
+              {expanded ? (
+                <ScaleContractIcon size={12} />
+              ) : (
+                <ScaleExtendIcon size={12} />
+              )}
+            </button>
           </div>
           <span className={styles.title}>{win.title}</span>
         </div>

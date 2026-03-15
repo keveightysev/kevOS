@@ -1,0 +1,29 @@
+export function ScaleExtendIcon({
+  size = 32,
+  className,
+}: {
+  size?: number;
+  className?: string;
+}) {
+  return (
+    <svg
+      height={size}
+      viewBox="0 0 21 21"
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <g
+        fill="none"
+        fill-rule="evenodd"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        transform="translate(5 5)"
+      >
+        <path d="m10.5 4.5v-3.978l-4-.022" />
+        <path d="m4.5 10.523h-4v-4.023" />
+      </g>
+    </svg>
+  );
+}

@@ -59,6 +59,7 @@
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
+  color: #0a0a0f;
 }
 
 .light:focus-visible {
@@ -68,13 +69,13 @@
 
 /* Active colors */
 .active .close {
-  background: #ff5f57;
+  background: #ff6b6b;
 }
 .active .minimize {
-  background: #febc2e;
+  background: #ffd93d;
 }
 .active .maximize {
-  background: #28c840;
+  background: #22d3ee;
 }
 
 /* Inactive grays */
