@@ -1,14 +1,10 @@
 import { useClock } from "../../hooks/useClock";
+import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import styles from "./MenuBar.module.css";
-
-interface MenuBarProps {
-  theme: "light" | "dark";
-  onToggleTheme: () => void;
-}
 
 const MENU_ITEMS = ["File", "Edit", "View", "Help"];
 
-export function MenuBar({ theme, onToggleTheme }: MenuBarProps) {
+export function MenuBar() {
   const time = useClock();
 
   const formatted = time.toLocaleString("en-US", {
@@ -36,13 +32,7 @@ export function MenuBar({ theme, onToggleTheme }: MenuBarProps) {
       </div>
 
       <div className={styles.right}>
-        <button
-          className={styles.themeToggle}
-          onClick={onToggleTheme}
-          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-        >
-          {theme === "light" ? "◑" : "◐"}
-        </button>
+        <ThemeToggle />
         <time className={styles.clock} dateTime={time.toISOString()}>
           {formatted}
         </time>

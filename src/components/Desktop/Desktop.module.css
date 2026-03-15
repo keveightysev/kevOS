@@ -1,16 +1,24 @@
 .desktop {
   position: fixed;
-  top: 20px;    /* menu bar height */
+  top: 20px; /* menu bar height */
   bottom: 24px; /* taskbar height */
   left: 0;
   right: 0;
   background-color: var(--desktop-bg);
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px
+  );
   background-size: 20px 20px;
 }
 
 [data-theme="dark"] .desktop {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
 }
 
 .iconColumn {
@@ -21,4 +29,11 @@
   flex-direction: column;
   gap: 4px;
   z-index: 1;
+}
+
+@media (max-width: 540px) {
+  .desktop {
+    top: 44px; /* menu bar height */
+    bottom: 44px; /* taskbar height */
+  }
 }

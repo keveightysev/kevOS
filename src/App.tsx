@@ -8,7 +8,6 @@ import { useWindowManager } from "./hooks/useWindowManager";
 export default function App() {
   const hasBooted = localStorage.getItem("kevos-booted") === "true";
   const [booted, setBooted] = useState(hasBooted);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
   const wm = useWindowManager();
 
   const handleBootComplete = () => {
@@ -20,11 +19,9 @@ export default function App() {
     return <BootScreen onComplete={handleBootComplete} />;
   }
 
-  const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
-
   return (
-    <div className="app" data-theme={theme}>
-      <MenuBar theme={theme} onToggleTheme={toggleTheme} />
+    <div className="app">
+      <MenuBar />
       <Desktop wm={wm} />
       <Taskbar
         windows={wm.windows}

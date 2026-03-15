@@ -1,0 +1,19 @@
+.toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text);
+  padding: 0 6px;
+  line-height: 1;
+}
+
+.toggle:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 540px) {
+  .toggle {
+    font-size: 20px;
+  }
+}
