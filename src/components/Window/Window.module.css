@@ -83,6 +83,7 @@
 .inactive .minimize,
 .inactive .maximize {
   background: #888;
+  color: transparent;
 }
 
 /* ─── Window title ─── */
