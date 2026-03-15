@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import type { Project } from "../../types/project";
 import styles from "./ProjectBrowser.module.css";
 import { WindowCollapseLeftIcon } from "../../icons/WindowCollapseLeftIcon";
@@ -143,7 +144,7 @@ function SidePanel({
                 <h3 className={styles.sectionTitle}>{section.title}</h3>
                 <div className={styles.sectionContent}>
                   {typeof section.content === "string" ? (
-                    <p>{section.content}</p>
+                    <ReactMarkdown>{section.content}</ReactMarkdown>
                   ) : (
                     section.content
                   )}

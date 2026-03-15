@@ -12,12 +12,6 @@ import { EngineeringWindow } from "../../windows/EngineeringWindow";
 import { ResearchWindow } from "../../windows/ResearchWindow";
 import { ContactWindow } from "../../windows/ContactWindow";
 import styles from "./Desktop.module.css";
-import { UserIcon } from "../../icons/UserIcon";
-import { DocumentIcon } from "../../icons/DocumentIcon";
-import { DocumentStackIcon } from "../../icons/DocumentStackIcon";
-import { CodeIcon } from "../../icons/CodeIcon";
-import { BookWithTextIcon } from "../../icons/BookWithTextIcon";
-import { PaperPlaneIcon } from "../../icons/PaperPlaneIcon";
 import { UXCaseStudiesWindow } from "../../windows/UXCaseStudiesWindow";
 
 interface WindowManager {
@@ -44,42 +38,42 @@ interface IconConfig {
 
 const DESKTOP_ICONS: IconConfig[] = [
   {
-    icon: <UserIcon />,
+    icon: <img src="/images/icons/about-kevin.png" />,
     label: "About Kevin",
     w: 550,
     h: "80%",
     makeContent: () => <AboutWindow />,
   },
   {
-    icon: <DocumentIcon />,
+    icon: <img src="/images/icons/resume.png" />,
     label: "Resume.pdf",
     w: "60%",
     h: 600,
     makeContent: () => <ResumeWindow />,
   },
   {
-    icon: <DocumentStackIcon />,
+    icon: <img src="/images/icons/ux-case-studies.png" />,
     label: "UX Case Studies",
     w: 560,
     h: 480,
     makeContent: () => <UXCaseStudiesWindow />,
   },
   {
-    icon: <CodeIcon />,
+    icon: <img src="/images/icons/engineering-work.png" />,
     label: "Engineering Work",
     w: 560,
     h: 480,
     makeContent: () => <EngineeringWindow />,
   },
   {
-    icon: <BookWithTextIcon />,
+    icon: <img src="/images/icons/research.png" />,
     label: "Research",
     w: 560,
     h: 480,
     makeContent: () => <ResearchWindow />,
   },
   {
-    icon: <PaperPlaneIcon />,
+    icon: <img src="/images/icons/contact.png" />,
     label: "Contact",
     w: 560,
     h: 535,

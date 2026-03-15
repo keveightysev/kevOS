@@ -24,7 +24,6 @@
   align-items: center;
   gap: 4px;
   padding: 0 8px;
-  height: 18px;
   border: 1px solid var(--border-color);
   background: var(--menubar-gradient);
   cursor: pointer;
@@ -57,7 +56,7 @@
   display: flex;
 }
 
-.icon > svg {
+.icon > img {
   width: 12px;
   height: 12px;
 }
@@ -70,12 +69,17 @@
 @media (max-width: 540px) {
   .taskbar {
     height: 44px;
+    align-items: stretch;
+    padding: 4px;
   }
 
-  .taskbarButton {
-    min-width: 44px;
-    min-height: 44px;
+  .btn {
     font-size: 12px;
     padding: 0 14px;
+  }
+
+  .icon > img {
+    width: 18px;
+    height: 18px;
   }
 }

@@ -2,6 +2,87 @@ import type { Project } from "../types/project";
 
 export const uxProjects: Project[] = [
   {
+    id: "secondhand-sync",
+    type: "ux",
+    hero: {
+      src: "/images/secondhand-sync/cover.jpg",
+      alt: "Secondhand Sync cover",
+    },
+    title: "Secondhand Sync",
+    subtitle:
+      "Mobile wayfinding and product discovery for secondhand retail · HCI 440 · DePaul University · Winter 2026",
+    year: 2026,
+    tags: [
+      "Usability Testing",
+      "User Interviews",
+      "Figma",
+      "Prototyping",
+      "UX Research",
+      "Persona Development",
+      "User-Centered Design",
+      "Think-Aloud Protocol",
+      "Mobile Design",
+      "Research Synthesis",
+    ],
+    thumbnail: {
+      src: "/images/secondhand-sync/thumbnail.jpg",
+      alt: "Secondhand Sync cover",
+    },
+    summary:
+      "A 10-week User-Centered Design project designing a mobile app to help secondhand shoppers navigate stores, discover inventory, and search with confidence.",
+    sections: [
+      {
+        title: "Problem & Context",
+        content:
+          "Thrift stores are unpredictable by nature: inventory changes daily, organizatio is inconsistent, and there's no reliable way to know if you've actually finished searching. Two types of shoppers feel this most: goal-directed hunters who need to search efficiently, and open-ended browsers who leave unsure if they missed something good.",
+      },
+      {
+        title: "My Role",
+        content: `- Conducted user interviews during discovery
+- Created concept prototype sketches
+- Synthesized requirements for product
+- Created mid-fidelity prototypes for store and product search
+- Facilitated observed user tests
+- Translated final prototypes into a high fidelity prototype`,
+      },
+      {
+        title: "Research Methods",
+        content:
+          "**12 semi-structured interviews** from shoppers across thrift, vintage, and specialty secondhand stores, chosen because we needed to understand the shopping experience and not just what people buy.\n\n**Think-aloud usability testing (n=5)** on a Figma prototype. Task completion rates alone don't tell you where people hesitate or why.",
+      },
+      {
+        title: "Key Insights",
+        content:
+          "1. **Search completeness anxiety is real.** 67% of participants described looping the same racks without confidence they'd seen everything\n2. **Shoppers lower expectations before entering.** 58% relied on serendipity because no reliable pre-visit inventory signal exists.\n3. **Price opacity kills purchase confidence.** 42% pulled up eBay or Depop mid-browse just to validate whether a price was actually a deal.\n4. **Multiple search bars broke trust.** The single biggest usability finding: users couldn't tell if they did the same thing or different things.\n5. **Filtering is a baseline expectation.** Users looked for it immediately. Its absense read as an oversight, not a design choice.",
+      },
+      {
+        title: "Design Decisions",
+        content: `- **Section Checklist + Store Map** - lets users mark sections as searched and see a progress indicator, directly resolving search completeness anxiety
+- **Interesting Finds feed** - surfaces curated inventory before a visit, replacing defensive low expectations with an informed decion
+- **Removed homepage search bar** - eliminated the amb`,
+      },
+      {
+        title: "Outcomes",
+        content:
+          "100% task completion across all five participants and four scenarios. But completion rates masked real friction: the think-aloud protocol surfaced hesitation and confusion that a pass/fail metric would have missed entirely.\n\nFour targeted redesigns shipped in response, each directly traceable to observed user behavior: consolidated search architecture, filtering controls, enriched item and store preview cards, and an onboarding progress indicator with a skip option.",
+      },
+      {
+        title: "Reflection & Next Steps",
+        content: `The biggest takeaway: task completion and actual usability are not the same thing. Every participant finished every task. The prototype still had five real problems.
+
+Given more time I'd focus on:
+- Reframing the in-store navigation entry point - the mental model hasn't fully landed
+- Give thought to the inventory problem: How do stores update their listings?`,
+      },
+    ],
+    links: [
+      {
+        label: "Figma Prototype",
+        url: "https://www.figma.com/proto/smFmROxAX0PfCuXDxUAPAP/Reprise?node-id=10-1964&viewport=334%2C190%2C0.24&t=JkmnJlofnvKXU63j-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A1964&page-id=0%3A1",
+      },
+    ],
+  },
+  {
     id: "personal-design-theory",
     type: "ux",
     hero: {
@@ -37,7 +118,7 @@ export const uxProjects: Project[] = [
           "Many design frameworks treat principles as technical checklists. This project asked a different question: what does good design mean to someone whose instincts were shaped by years of customer-facing work, a non-traditional path into engineering, and a growing interest in how technology shapes human experience? The assignment required moving from observation to abstraction, using everyday artifacts to extract a personal, coherent design philosophy.",
       },
       {
-        title: "Your Role",
+        title: "My Role",
         content:
           "Individual project. All observation, analysis, principle development, case study writing, and visual design were my own work.",
       },
@@ -77,37 +158,37 @@ export const uxProjects: Project[] = [
 ];
 
 export const engineeringProjects: Project[] = [
-  {
-    id: "pie-onboarding",
-    type: "engineering",
-    title: "Pie Onboarding Rebuild",
-    subtitle: "Senior Software Engineer · Pie · 2026",
-    year: 2026,
-    tags: ["React Native", "TypeScript", "Mobile", "Product", "Mixpanel", "UX"],
-    thumbnail: {
-      src: "/images/pie-onboarding/cover.png",
-      alt: "Pie mobile app onboarding flow",
-    },
-    summary:
-      "Rebuilt the Pie mobile onboarding flow from 4 steps to 13 to drive richer profile completion and improve user-to-user interaction quality. Despite the significant increase in steps, Mixpanel event tracking showed no meaningful drop-off — users were completing the full flow.",
-    sections: [
-      {
-        title: "Problem",
-        content:
-          "New users were arriving on the platform with sparse profiles — no photo, minimal interests, little context for other users to connect with them. This created a cold-start problem: even users who wanted to engage had nothing to go on. The original 4-step onboarding wasn't capturing enough signal to make the product work.",
-      },
-      {
-        title: "Approach",
-        content:
-          "Expanded onboarding from 4 steps to 13, progressively collecting profile data — photos, interests, social context, and preferences — in a way that felt conversational rather than form-like. Each step was designed to feel low-friction while collectively building a profile dense enough to drive real recommendations and interactions.",
-      },
-      {
-        title: "Outcome",
-        content:
-          "No significant drop-off at any step according to Mixpanel funnel analysis. Users were completing the full 13-step flow at rates comparable to the original 4-step flow, with substantially richer profiles as the result. The rebuild directly improved the quality of user-to-user interactions on the platform.",
-      },
-    ],
-  },
+  // {
+  //   id: "pie-onboarding",
+  //   type: "engineering",
+  //   title: "Pie Onboarding Rebuild",
+  //   subtitle: "Senior Software Engineer · Pie · 2026",
+  //   year: 2026,
+  //   tags: ["React Native", "TypeScript", "Mobile", "Product", "Mixpanel", "UX"],
+  //   thumbnail: {
+  //     src: "/images/pie-onboarding/cover.png",
+  //     alt: "Pie mobile app onboarding flow",
+  //   },
+  //   summary:
+  //     "Rebuilt the Pie mobile onboarding flow from 4 steps to 13 to drive richer profile completion and improve user-to-user interaction quality. Despite the significant increase in steps, Mixpanel event tracking showed no meaningful drop-off — users were completing the full flow.",
+  //   sections: [
+  //     {
+  //       title: "Problem",
+  //       content:
+  //         "New users were arriving on the platform with sparse profiles — no photo, minimal interests, little context for other users to connect with them. This created a cold-start problem: even users who wanted to engage had nothing to go on. The original 4-step onboarding wasn't capturing enough signal to make the product work.",
+  //     },
+  //     {
+  //       title: "Approach",
+  //       content:
+  //         "Expanded onboarding from 4 steps to 13, progressively collecting profile data — photos, interests, social context, and preferences — in a way that felt conversational rather than form-like. Each step was designed to feel low-friction while collectively building a profile dense enough to drive real recommendations and interactions.",
+  //     },
+  //     {
+  //       title: "Outcome",
+  //       content:
+  //         "No significant drop-off at any step according to Mixpanel funnel analysis. Users were completing the full 13-step flow at rates comparable to the original 4-step flow, with substantially richer profiles as the result. The rebuild directly improved the quality of user-to-user interactions on the platform.",
+  //     },
+  //   ],
+  // },
   {
     id: "us-state-converter",
     type: "engineering",
