@@ -1,7 +1,7 @@
 import styles from "./WindowContent.module.css";
 
 export function ResumeWindow() {
-  const DRIVE_FILE_ID = "1W0IsE76kFTSUQj1On5jEtawdMSOMPDZT";
+  const DRIVE_FILE_ID = "1uhFpWVORTMVm1pZTghBcG6AEoPO46Gpe";
   return (
     <div className={styles.resumeContainer}>
       <iframe
