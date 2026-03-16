@@ -358,33 +358,4 @@ export const researchProjects: Project[] = [
       },
     ],
   },
-  {
-    id: "pie-checkin-interpretive",
-    type: "research",
-    title: "Frontstage Access, Backstage Labor",
-    subtitle:
-      "Interpretive Analysis · HCI 450 · DePaul University · Winter 2026",
-    year: 2026,
-    tags: [
-      "Goffman",
-      "Contextual Design",
-      "Beyer & Holtzblatt",
-      "Impression Management",
-      "Frontstage/Backstage",
-      "Pie",
-      "Mobile UX",
-    ],
-    thumbnail: {
-      src: "/images/pie-checkin/cover.png",
-      alt: "QR code check-in interaction at a Pie event",
-    },
-    summary:
-      "An interpretive analysis of QR code check-in at a Pie event, using Goffman's presentation of self to argue that a successful scan does more than grant access — it publicly confirms legitimacy and belonging. Examines the invisible backstage labor users perform to preserve frontstage order when the system breaks down.",
-    links: [
-      {
-        label: "Read the Full Paper",
-        url: "https://drive.google.com/file/d/1KHoOVarqawjlw8OpXUSmrs-YvYfV7_X_/view?usp=sharing",
-      },
-    ],
-  },
 ];
