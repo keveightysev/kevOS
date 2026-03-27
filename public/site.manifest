@@ -1,6 +1,7 @@
 {
   "name": "kevOS",
   "short_name": "kevOS",
+  "start_url": "/"
   "icons": [
     {
       "src": "/images/metadata/android-chrome-192x192.png",
