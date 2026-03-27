@@ -1,0 +1,6 @@
+# Kevin Smith Portfolio — robots.txt
+# https://www.robotstxt.org/
+ 
+# Allow all crawlers
+User-agent: *
+Allow: /
