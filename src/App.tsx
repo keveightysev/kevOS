@@ -4,6 +4,7 @@ import { Desktop } from "./components/Desktop/Desktop";
 import { MenuBar } from "./components/MenuBar/MenuBar";
 import { Taskbar } from "./components/Taskbar/Taskbar";
 import { useWindowManager } from "./hooks/useWindowManager";
+import { NavigationProvider } from "./contexts/NavContext";
 
 export default function App() {
   const hasBooted = localStorage.getItem("kevos-booted") === "true";
@@ -21,14 +22,16 @@ export default function App() {
 
   return (
     <div className="app">
-      <MenuBar />
-      <Desktop wm={wm} />
-      <Taskbar
-        windows={wm.windows}
-        activeId={wm.activeId}
-        onFocus={wm.focusWindow}
-        onToggleMinimize={wm.toggleMinimize}
-      />
+      <NavigationProvider wm={wm}>
+        <MenuBar />
+        <Desktop wm={wm} />
+        <Taskbar
+          windows={wm.windows}
+          activeId={wm.activeId}
+          onFocus={wm.focusWindow}
+          onToggleMinimize={wm.toggleMinimize}
+        />
+      </NavigationProvider>
     </div>
   );
 }

@@ -17,3 +17,13 @@ export interface WindowState extends WindowConfig {
   minimized: boolean;
   zIndex: number;
 }
+
+export interface WindowManager {
+  windows: WindowState[];
+  activeId: number | null;
+  openWindow: (config: WindowConfig) => number;
+  closeWindow: (id: number) => void;
+  focusWindow: (id: number) => void;
+  toggleMinimize: (id: number) => void;
+  moveWindow: (id: number, x: number, y: number) => void;
+}
